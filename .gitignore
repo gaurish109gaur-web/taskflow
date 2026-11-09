@@ -1,0 +1,10 @@
+node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/target/
+backend/taskflow-data.json
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
