@@ -17,6 +17,9 @@ const tools = [
   { to: "/analytics", label: "Insights", icon: BarChart3 },
 ];
 
+const userName = "gaurish";
+const userInitial = userName.charAt(0).toUpperCase();
+
 const titles = {
   "/": ["Good to see you", new Intl.DateTimeFormat("en", { weekday: "long", month: "long", day: "numeric" }).format(new Date())],
   "/tasks": ["My tasks", "Stay on top of what’s next"],
@@ -75,8 +78,8 @@ export default function StudyFlowShell({ children, data, theme, onToggleTheme, o
             <span className="streak-flame">↗</span>
           </div>
           <div className="profile-row">
-            <span className="profile-avatar">J</span>
-            <span className="profile-name"><strong>Jamie Parker</strong><small>Student plan</small></span>
+            <span className="profile-avatar">{userInitial}</span>
+            <span className="profile-name"><strong>{userName}</strong><small>Student plan</small></span>
             <button aria-label="Open profile menu" className="icon-quiet"><Command size={16} /></button>
           </div>
         </div>
@@ -91,7 +94,7 @@ export default function StudyFlowShell({ children, data, theme, onToggleTheme, o
               {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
             </button>
             <button className="button button-primary topbar-add" onClick={onQuickAdd}><span>+</span> New task</button>
-            <span aria-label="Jamie Parker" className="header-avatar">J</span>
+            <span aria-label={userName} className="header-avatar">{userInitial}</span>
             <button aria-label="Account options" className="account-menu"><UserRound size={15} /><ChevronDown size={13} /></button>
           </div>
         </header>
