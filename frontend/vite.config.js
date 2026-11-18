@@ -11,6 +11,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules/three/")) return "three-vendor";
+          if (id.includes("/node_modules/recharts/") || /\/node_modules\/(d3-[^/]+|victory-vendor)\//.test(id)) return "charts-vendor";
           return undefined;
         },
       },

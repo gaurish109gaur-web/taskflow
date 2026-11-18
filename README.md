@@ -1,5 +1,17 @@
 # Taskflow
 
+The frontend in `frontend/` is the StudyFlow student productivity SPA. It stores study data in each visitor's browser; the legacy Taskflow backend is not required to run it.
+
+## Deploy StudyFlow on Render
+
+The root [`render.yaml`](./render.yaml) Blueprint configures a Render static site for the frontend, including the SPA rewrite needed for direct links such as `/tasks` and `/analytics`.
+
+1. Push this repository and branch to GitHub.
+2. In Render, choose **New > Blueprint** and connect this repository.
+3. Confirm the `studyflow` static site and deploy it. Render installs from `frontend/package-lock.json`, runs `npm ci && npm run build`, and publishes `frontend/dist`.
+
+StudyFlow data is stored in browser `localStorage`, so it is per-browser and is not shared across devices.
+
 Taskflow is a collaborative project management tool inspired by Jira. It includes project workspaces, team roles, task boards, deadlines, comments, activity tracking, and real-time updates through WebSockets.
 
 ## Stack
